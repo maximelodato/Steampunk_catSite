@@ -1,0 +1,28 @@
+<div class="banner_page">
+<img src="https://i.pinimg.com/736x/eb/c4/58/ebc4585c60a1747465044d967569aceb.jpg" alt="banner">
+  <div class="title_banner">
+  <h1 class="title_page">Contact</h1>
+  <a href="<%= root_path %>" class="btn_page">Accueil </a> >  <a href="<%= products_path %>" class="btn_page">Produits</a>
+</div>
+</div>
+
+
+
+<%= form_with(url: '/contact', method: 'post') do |form| %>
+  <div>
+    <%= form.label :name, 'Nom' %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :email, 'Email' %>
+    <%= form.email_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :message, 'Message' %>
+    <%= form.text_area :message %>
+  </div>
+
+  <%= form.submit 'Envoyer' %>
+<% end %>

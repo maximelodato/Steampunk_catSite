@@ -1,24 +1,54 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Projet : boutique e-commerce de photo de chats
 
-Things you may want to cover:
+Une boutique en ligne qui vend des photos de chatons.
 
-* Ruby version
+## Pour commencer
 
-* System dependencies
+Voici les instructions pour bien débuter avec votre projet.
 
-* Configuration
+### Pré-requis
 
-* Database creation
+Ce qu'il est requis pour commencer avec votre projet :
 
-* Database initialization
+* Un éditeur de code (ex : Visual Studio Code)
+* Un navigateur web (ex : Google Chrome)
+* Une connaissance de base en HTML, CSS et JavaScript
 
-* How to run the test suite
+### Installation
 
-* Services (job queues, cache servers, search engines, etc.)
+Les étapes pour installer votre programme :
 
-* Deployment instructions
+1. Clonez le dépôt GitHub sur votre ordinateur local
+2. Ouvrez le dossier du projet dans votre éditeur de code
+3. Ouvrez le fichier index.html dans votre navigateur web
 
-* ...
+## Démarrage
+
+Pour lancer le site, il vous suffit d'ouvrir le fichier index.html dans votre navigateur web.
+
+## Fabriqué avec
+
+* HTML/CSS
+* JavaScript
+* Stripe API pour le paiement en ligne
+* Ruby on Rails
+
+
+## Versions
+
+**Dernière version stable :** 0.1
+**Dernière version :** 0.1
+
+## Auteurs
+
+* **Nom du premier auteur** _alias_ [@ValentinMich349](https://github.com/ValentinMich349)
+* **Nom du deuxième auteur** _alias_ [@maximelodato](https://github.com/maximelodato)
+* **Nom du troisième auteur** _alias_ [@Shunsunkey](https://github.com/Shunsunkey)
+
+Lisez la liste des [contributeurs](https://github.com/your/project/contributors) pour voir qui à aidé au projet !
+
+## License
+
+Ce projet est sous licence MIT - voir le fichier [LICENSE.md](LICENSE.md) pour plus d'informations.
