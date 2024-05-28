@@ -32,7 +32,7 @@
   <ul class="navbar-nav" style="margin-right: 0;">
   <% if current_user %>
   <li class="nav-item">
-    <%= form_with(url: logout_path, method: :delete) do %>
+    <%= form_with(url: destroy_user_session_path, method: :delete) do %>
       <%= csrf_meta_tags %>
       <button type="submit" class="btn btn-danger nav-link">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" height="24">
@@ -50,7 +50,7 @@
       </svg>
     </a>
     <div class="dropdown-menu dropdown-content" aria-labelledby="navbarDropdown">
-      <a class="dropdown-item" href="#">S'inscrire</a>
+      <a class="dropdown-item" href="<%= new_user_registration_path %>">S'inscrire</a>
       <a class="dropdown-item" href="#">Se connecter</a>
     </div>
   </li>
