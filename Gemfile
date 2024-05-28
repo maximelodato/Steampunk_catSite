@@ -70,3 +70,5 @@ gem 'devise'
 
 
 
+
+gem "faker", "~> 3.3"
