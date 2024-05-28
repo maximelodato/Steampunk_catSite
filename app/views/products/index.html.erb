@@ -6,28 +6,22 @@
   </div>
 </div>
 
-  <!-- app/views/products/index.html.erb -->
+<!-- app/views/products/index.html.erb -->
 
 <div class="container">
   <!-- Navigation bar for filters, view options, and sort options -->
   <div class="row mb-3">
     <div class="col-md-12">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light p-3 rounded">
         <div class="container-fluid">
-          <!-- Filters -->
-          <div class="navbar-nav">
-            <a class="nav-link" href="#"><i class="bi bi-funnel"></i> Filtre</a>
-            <a class="nav-link" href="#"><i class="bi bi-grid-3x3-gap-fill"></i></a>
-            <a class="nav-link" href="#"><i class="bi bi-list"></i></a>
-          </div>
           <!-- Showing results info -->
           <span class="navbar-text ms-auto me-3">
             Montrer <%= ((@page - 1) * params[:per_page].to_i + 1) %>-<%= [@page * params[:per_page].to_i, @total_items].min %> de <%= @total_items %> résultats
           </span>
           <!-- View options -->
-          <form class="d-flex" action="<%= products_path %>" method="get">
-            <label for="per_page" class="me-2">Voir</label>
-            <select name="per_page" id="per_page" class="form-select me-3" onchange="this.form.submit();">
+          <form class="d-flex me-3" action="<%= products_path %>" method="get">
+            <label for="per_page" class="ms-auto me-2 d-flex align-items-center">Voir</label>
+            <select name="per_page" id="per_page" class="form-select" onchange="this.form.submit();">
               <option value="16" <%= 'selected' if params[:per_page] == '16' %>>16</option>
               <option value="32" <%= 'selected' if params[:per_page] == '32' %>>32</option>
               <option value="64" <%= 'selected' if params[:per_page] == '64' %>>64</option>
@@ -35,7 +29,7 @@
           </form>
           <!-- Sort options -->
           <form class="d-flex">
-            <label for="sort" class="me-2">Trié par</label>
+            <label for="sort" class="me-2 d-flex align-items-center">Trié par</label>
             <select name="sort" id="sort" class="form-select">
               <option value="default">Défaut</option>
               <!-- Ajoutez ici les autres options de tri si nécessaire -->
@@ -90,6 +84,7 @@
     </div>
   </div>
 </div>
+
 
 
 

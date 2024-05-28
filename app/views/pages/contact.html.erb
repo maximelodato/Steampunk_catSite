@@ -2,69 +2,66 @@
 <img src="https://i.pinimg.com/736x/eb/c4/58/ebc4585c60a1747465044d967569aceb.jpg" alt="banner">
   <div class="title_banner">
   <h1 class="title_page">Contact</h1>
-  <a href="<%= root_path %>" class="btn_page">Accueil </a> >  <a href="<%= products_path %>" class="btn_page">Produits</a>
 </div>
 </div>
 
 
 
 <!-- app/views/pages/contact.html.erb -->
+
 <div class="container mt-5">
-  <h1>Contactez nous !</h1>
-  <p>Pour plus d'informations sur nos produits et services, n'hésitez pas à nous envoyer un e-mail. Notre équipe est toujours là pour vous aider. N'hésitez pas !</p>
-
   <div class="row">
+    <div>
+      <h2>Contactez nous !</h2>
+        <p>Pour plus d'informations sur nos produits et services, n'hésitez pas à nous envoyer un e-mail. Notre équipe est toujours là pour vous aider. N'hésitez pas !</p>
+    </div>
     <div class="col-md-6">
-      <h4>Adresse</h4>
-      <p>236 5th SE Avenue, New York NY10000, United States</p>
-      <h4>Téléphone</h4>
-      <p>Mobile: +(84) 546-6789</p>
-      <p>Hotline: +(84) 456-6789</p>
-      <h4>Adresse Mail</h4>
-      <p>Abc@def.com</p>
-      <h4>Heures de Travail</h4>
-      <p>Monday-Friday: 9:00 - 22:00</p>
-      <p>Saturday-Sunday: 9:00 - 21:00</p>
+      <div class="mt-4">
+        <h4>Adresse</h4>
+        <p>
+          <i class="bi bi-geo-alt"></i> 150 chemin des roussignols, 47000 , Agen
+        </p>
+      </div>
+      
+      <div class="mt-4">
+        <h4>Téléphone</h4>
+        <p>
+          <i class="bi bi-telephone"></i> Mobile: (543) 456-4789<br>
+          <i class="bi bi-telephone"></i> Hotline: (123) 456-4789
+        </p>
+      </div>
+      
+      <div class="mt-4">
+        <h4>Horaire de travail</h4>
+        <p>
+          <i class="bi bi-clock"></i> Lundi-Vendredi: 8:00 - 22:00<br>
+          <i class="bi bi-clock"></i> Samedi-Dimanche: 9:00 - 21:00
+        </p>
+      </div>
     </div>
 
     <div class="col-md-6">
-      <%= form_with model: @message, url: contact_path, method: :post, local: true, class: "needs-validation" do |f| %>
-        <div class="form-group mb-3">
-          <%= f.label :name, "Votre Nom" %>
-          <%= f.text_field :name, class: "form-control", required: true %>
+      <form>
+        <div class="mb-3">
+          <label for="name" class="form-label">Votre Nom</label>
+          <input type="text" class="form-control" id="name" placeholder="Alice">
         </div>
-
-        <div class="form-group mb-3">
-          <%= f.label :email, "Adresse Mail" %>
-          <%= f.email_field :email, class: "form-control", required: true %>
+        <div class="mb-3">
+          <label for="email" class="form-label">Adresse email</label>
+          <input type="email" class="form-control" id="email" placeholder="alice@example.com">
         </div>
-
-        <div class="form-group mb-3">
-          <%= f.label :subject, "Sujet" %>
-          <%= f.text_field :subject, class: "form-control" %>
+        <div class="mb-3">
+          <label for="subject" class="form-label">Sujet</label>
+          <input type="text" class="form-control" id="subject" placeholder="This is an optional">
         </div>
-
-        <div class="form-group mb-3">
-          <%= f.label :content, "Message" %>
-          <%= f.text_area :content, class: "form-control", rows: 5, required: true, placeholder: "Hi! I’d like to ask about..." %>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-control" id="message" rows="4" placeholder="Hi! I'd like to talk about ..."></textarea>
         </div>
-
-        <div class="form-group">
-          <%= f.submit "Soumettre", class: "btn gold-button" %>
-        </div>
-      <% end %>
-
-      <% if flash[:notice] %>
-        <div class="alert alert-success mt-3">
-          <%= flash[:notice] %>
-        </div>
-      <% elsif flash[:alert] %>
-        <div class="alert alert-danger mt-3">
-          <%= flash[:alert] %>
-        </div>
-      <% end %>
+        <button type="submit" class="btn btn-primary" style="background-color: #d4a373; border-color: #d4a373;">Soumettre</button>
+      </form>
     </div>
   </div>
-  </div>
-  <%= render partial: 'shared/trophy' %>
 </div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
