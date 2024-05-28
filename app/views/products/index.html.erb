@@ -1,8 +1,96 @@
 <div class="banner_page">
 <img src="https://i.pinimg.com/736x/eb/c4/58/ebc4585c60a1747465044d967569aceb.jpg" alt="banner" style="width:100%; height: auto;">
   <div class="title_banner d-none d-lg-block">
-  <h1 class="title_page">Produits</h1>
-  <a href="<%= root_path %>" class="btn_page">Accueil </a> >  <a href="<%= products_path %>" class="btn_page">Produits</a>
+    <h1 class="title_page">Produits</h1>
+    <a href="<%= root_path %>" class="btn_page">Accueil </a> >  <a href="<%= products_path %>" class="btn_page">Produits</a>
+  </div>
 </div>
+
+  <!-- app/views/products/index.html.erb -->
+
+<div class="container">
+  <!-- Navigation bar for filters, view options, and sort options -->
+  <div class="row mb-3">
+    <div class="col-md-12">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <!-- Filters -->
+          <div class="navbar-nav">
+            <a class="nav-link" href="#"><i class="bi bi-funnel"></i> Filtre</a>
+            <a class="nav-link" href="#"><i class="bi bi-grid-3x3-gap-fill"></i></a>
+            <a class="nav-link" href="#"><i class="bi bi-list"></i></a>
+          </div>
+          <!-- Showing results info -->
+          <span class="navbar-text ms-auto me-3">
+            Montrer <%= ((@page - 1) * params[:per_page].to_i + 1) %>-<%= [@page * params[:per_page].to_i, @total_items].min %> de <%= @total_items %> résultats
+          </span>
+          <!-- View options -->
+          <form class="d-flex" action="<%= products_path %>" method="get">
+            <label for="per_page" class="me-2">Voir</label>
+            <select name="per_page" id="per_page" class="form-select me-3" onchange="this.form.submit();">
+              <option value="16" <%= 'selected' if params[:per_page] == '16' %>>16</option>
+              <option value="32" <%= 'selected' if params[:per_page] == '32' %>>32</option>
+              <option value="64" <%= 'selected' if params[:per_page] == '64' %>>64</option>
+            </select>
+          </form>
+          <!-- Sort options -->
+          <form class="d-flex">
+            <label for="sort" class="me-2">Trié par</label>
+            <select name="sort" id="sort" class="form-select">
+              <option value="default">Défaut</option>
+              <!-- Ajoutez ici les autres options de tri si nécessaire -->
+            </select>
+          </form>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="row">
+    <% if @items.present? %>
+      <% @items.each do |item| %>
+        <div class="col-md-3 mb-4">
+          <%= link_to product_path(item), class: "text-decoration-none text-dark" do %>
+            <div class="card h-100">
+              <img src="<%= item.image_url %>" class="card-img-top" alt="<%= item.title %>">
+              <div class="card-body">
+                <h5 class="card-title"><%= item.title %></h5>
+                <p class="card-text"><%= item.description %></p>
+                <p class="card-text"><strong>$<%= item.price %></strong></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% else %>
+      <p>No items available.</p>
+    <% end %>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+          <% if @page > 1 %>
+            <li class="page-item">
+              <%= link_to 'Previous', products_path(page: @page - 1, per_page: params[:per_page]), class: "page-link" %>
+            </li>
+          <% end %>
+          <% (1..@total_pages).each do |page| %>
+            <li class="page-item <%= 'active' if page == @page %>">
+              <%= link_to page, products_path(page: page, per_page: params[:per_page]), class: "page-link" %>
+            </li>
+          <% end %>
+          <% if @page < @total_pages %>
+            <li class="page-item">
+              <%= link_to 'Next', products_path(page: @page + 1, per_page: params[:per_page]), class: "page-link" %>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </div>
 </div>
+
+
+
 <%= render partial: 'shared/trophy' %>
