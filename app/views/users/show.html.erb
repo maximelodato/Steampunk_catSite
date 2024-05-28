@@ -1,0 +1,9 @@
+<h1>Profil Utilisateur</h1>
+
+<% if @user %>
+  <p>Prénom: <%= @user.first_name %></p>
+  <p>Nom: <%= @user.last_name %></p>
+  <p>Email: <%= @user.email %></p>
+<% else %>
+  <p>Aucun utilisateur connecté.</p>
+<% end %>

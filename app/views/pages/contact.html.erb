@@ -8,21 +8,63 @@
 
 
 
-<%= form_with(url: '/contact', method: 'post') do |form| %>
-  <div>
-    <%= form.label :name, 'Nom' %>
-    <%= form.text_field :name %>
-  </div>
+<!-- app/views/pages/contact.html.erb -->
+<div class="container mt-5">
+  <h1>Contactez nous !</h1>
+  <p>Pour plus d'informations sur nos produits et services, n'hésitez pas à nous envoyer un e-mail. Notre équipe est toujours là pour vous aider. N'hésitez pas !</p>
 
-  <div>
-    <%= form.label :email, 'Email' %>
-    <%= form.email_field :email %>
-  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h4>Adresse</h4>
+      <p>236 5th SE Avenue, New York NY10000, United States</p>
+      <h4>Téléphone</h4>
+      <p>Mobile: +(84) 546-6789</p>
+      <p>Hotline: +(84) 456-6789</p>
+      <h4>Adresse Mail</h4>
+      <p>Abc@def.com</p>
+      <h4>Heures de Travail</h4>
+      <p>Monday-Friday: 9:00 - 22:00</p>
+      <p>Saturday-Sunday: 9:00 - 21:00</p>
+    </div>
 
-  <div>
-    <%= form.label :message, 'Message' %>
-    <%= form.text_area :message %>
-  </div>
+    <div class="col-md-6">
+      <%= form_with model: @message, url: contact_path, method: :post, local: true, class: "needs-validation" do |f| %>
+        <div class="form-group mb-3">
+          <%= f.label :name, "Votre Nom" %>
+          <%= f.text_field :name, class: "form-control", required: true %>
+        </div>
 
-  <%= form.submit 'Envoyer' %>
-<% end %>
+        <div class="form-group mb-3">
+          <%= f.label :email, "Adresse Mail" %>
+          <%= f.email_field :email, class: "form-control", required: true %>
+        </div>
+
+        <div class="form-group mb-3">
+          <%= f.label :subject, "Sujet" %>
+          <%= f.text_field :subject, class: "form-control" %>
+        </div>
+
+        <div class="form-group mb-3">
+          <%= f.label :content, "Message" %>
+          <%= f.text_area :content, class: "form-control", rows: 5, required: true, placeholder: "Hi! I’d like to ask about..." %>
+        </div>
+
+        <div class="form-group">
+          <%= f.submit "Soumettre", class: "btn gold-button" %>
+        </div>
+      <% end %>
+
+      <% if flash[:notice] %>
+        <div class="alert alert-success mt-3">
+          <%= flash[:notice] %>
+        </div>
+      <% elsif flash[:alert] %>
+        <div class="alert alert-danger mt-3">
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  </div>
+  <%= render partial: 'shared/trophy' %>
+</div>

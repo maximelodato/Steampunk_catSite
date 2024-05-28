@@ -1,0 +1,87 @@
+<div class="banner">
+<img src="https://i.pinimg.com/736x/eb/c4/58/ebc4585c60a1747465044d967569aceb.jpg" alt="banner">
+  <div class="banner_text">
+  <p>Découvrez nos nouvelles photos de chats steampunk ! Plongez dans un univers où élégance féline et esthétique victorienne se rencontrent.</p>
+  <a href="<%= products_path %>" class="btn">Achetez Maintenant !</a>
+</div>
+</div>
+<div class="container mt-5">
+  <h1>Détails paiement</h1>
+  <h2>Produits</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Article</th>
+        <th scope="col">Quantité</th>
+        <th scope="col">Prix</th>
+      </tr>
+    </thead>
+  </table>
+
+  
+  <form>
+    <h2>Informations personnelles</h2>
+    <div class="mb-3">
+      <label for="firstName" class="form-label">Prénom</label>
+      <input type="text" class="form-control" id="firstName" required>
+    </div>
+    <div class="mb-3">
+      <label for="lastName" class="form-label">Nom</label>
+      <input type="text" class="form-control" id="lastName" required>
+    </div>
+    <div class="mb-3">
+      <label for="companyName" class="form-label">Nom de l’Entreprise (Optionel)</label>
+      <input type="text" class="form-control" id="companyName">
+    </div>
+    <div class="mb-3">
+      <label for="address" class="form-label">Adresse</label>
+      <input type="text" class="form-control" id="address" required>
+    </div>
+    <div class="mb-3">
+      <label for="city" class="form-label">Ville</label>
+      <input type="text" class="form-control" id="city" required>
+    </div>
+    <div class="mb-3">
+      <label for="state" class="form-label">Département</label>
+      <input type="text" class="form-control" id="state" required>
+    </div>
+    <div class="mb-3">
+      <label for="zipCode" class="form-label">Code Postale</label>
+      <input type="text" class="form-control" id="zipCode" required>
+    </div>
+    <div class="mb-3">
+      <label for="country" class="form-label">Pays</label>
+      <input type="text" class="form-control" id="country" value="Sri Lanka" required>
+    </div>
+    <div class="mb-3">
+      <label for="phone" class="form-label">Téléphone</label>
+      <input type="tel" class="form-control" id="phone" required>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Adresse Mail</label>
+      <input type="email" class="form-control" id="email" required>
+    </div>
+    <div class="mb-3">
+      <label for="additionalInfo" class="form-label">Informations supplémentaires</label>
+      <textarea class="form-control" id="additionalInfo" rows="3"></textarea>
+    </div>
+
+    <h2>Méthode de paiement</h2>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="paymentMethod" id="bankTransfer" value="bankTransfer" checked>
+      <label class="form-check-label" for="bankTransfer">
+        Direct Bank Transfer
+      </label>
+      <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="paymentMethod" id="cashOnDelivery" value="cashOnDelivery">
+      <label class="form-check-label" for="cashOnDelivery">
+        Cash On Delivery
+      </label>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Place order</button>
+  </form>
+</div>
+<%= render partial: 'shared/trophy' %>

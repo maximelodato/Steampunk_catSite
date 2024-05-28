@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
          
   has_many :orders, dependent: :destroy
-
+  
   after_save :create_cart
 
   def create_cart
@@ -16,4 +16,5 @@ class User < ApplicationRecord
   def admin?
     current_user.admin == true
   end
+
 end

@@ -7,14 +7,15 @@ class PagesController < ApplicationController
         @message = Message.new
     end
 
-    def create
-        @message = Message.new(message_params)
-        if @message.save
-          # Traitez ici l'enregistrement du message
-          redirect_to root_path, notice: 'Message envoyé avec succès.'
-        else
-          render :contact
-        end
+    def create_contact
+      @message = Message.new(message_params)
+      if @message.save
+        flash[:notice] = "Message envoyé avec succès!"
+        redirect_to contact_path
+      else
+        flash[:alert] = "Erreur lors de l'envoi du message."
+        render :contact
+      end
     end
 
         private

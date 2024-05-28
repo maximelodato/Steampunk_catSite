@@ -1,0 +1,43 @@
+<footer class="bg-light pt-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <h5>SteamPunk_Cat</h5>
+        <address>
+          58 rue de la guinguette<br>
+          75001 PARIS
+        </address>
+      </div>
+      <div class="col-md-3">
+        <h5>Liens</h5>
+        <ul class="list-unstyled">
+          <li><%= link_to 'Accueil', root_path, class: 'text-dark' %></li>
+          <li><%= link_to 'Produits', products_path, class: 'text-dark' %></li>
+          <li><%= link_to 'À Propos', about_path, class: 'text-dark' %></li>
+          <li><%= link_to 'Contact', contact_path, class: 'text-dark' %></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5>Aide</h5>
+        <ul class="list-unstyled">
+
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5>Newsletter</h5>
+        <form action="" method="post" class="form-inline">
+          <div class="input-group">
+            <%= text_field_tag :email, nil, placeholder: 'Votre adresse mail', class: 'form-control' %>
+            <div class="input-group-append">
+              <%= submit_tag 'ABONNEMENT', class: 'btn btn-dark' %>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <hr/>
+    <div class="text-center py-3">
+      <p class="mb-0">&copy; 2024 SteamPunk_Cat. All rights reserved</p>
+    </div>
+  </div>
+</footer>

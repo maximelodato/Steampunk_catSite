@@ -13,152 +13,137 @@
  *= require_tree .
  *= require_self
  */
- html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%; /* Définit la hauteur à 100% pour remplir toute la page */
-  }
-  
-  .banner {
-    position: relative;
-  }
-  
-  .banner img {
-    width: 100%; /* Étend l'image sur toute la largeur de son conteneur */
-    display: block; /* Assurez-vous que l'image est affichée en tant que bloc pour gérer correctement les marges */
-  }
-  
-  .banner_text {
-    position: absolute;
-    bottom: 20px; /* Espacement par rapport au bas de l'image */
-    right: 20px; /* Espacement par rapport à gauche */
-    width: 70%;
-    max-width: 700px;
-    height: 250px;
-    background-color: #F9E4B7;
-    padding: 20px;
-    border-radius: 30px;
-  }
-  
-  .banner_text p {
-    margin: 10px; /* Supprime la marge par défaut du paragraphe */
-    font-size: 25px;
-  }
-  
-  .banner_text .btn {
-    display: inline-block;
-    margin: 0 auto;
-    padding: 12px 24px;
-    background-color: #D4AF37;
-    color: #fff;
-    text-decoration: none;
-    margin-top: 30px;
-    font-size: 25px;
-    text-align: center;
-  }
-  
  .navbar {
-    background-color: white;
-    color: black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    max-height: 100px;
-  }
-  
-  .logo {
-    max-height: 80px;
-  }
-  
-  .navbar-nav {
-    list-style-type: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-item {
-    margin-left: 40px;
-    font-size: 25px;
-  }
-  
-  .nav-link {
-    color: black;
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .nav-link:hover {
-    background-color: #555;
-  }
-  
-  .icon-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
-  
-  .icon-list li {
-    margin-left: 40px;
-  }
-  
-  .icon-list a {
-    color: #fff;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    transition: background-color 0.3s ease;
-  }
-  
-  .icon-list a:hover {
-    background-color: #555;
-  }
+  background-color: #ffffff;
+}
+.nav-link {
+  color: black;
+  text-decoration: none;
+}
+.nav-link:hover {
+  color: black;
+}
+.navbar-brand {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform:uppercase;
+  color: black;
+}
 
-  .dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-  .show {
-    display: block;
-  }
+.navbar-nav {
+  margin: auto;
+}
+
+.navbar-nav.text-center {
+  flex: 1;
+}
+
+
+.navbar-nav .nav-item .nav-link {
+  font-size: 1.1em;
+}
+
+.navbar-brand img {
+  width: 50px;
+  height: 50px;
+}
+
+.navbar-brand img {
+  width: 50px;
+  height: 50px;
+}
+.dropdown-content {
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.banner {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.banner img {
+  width: 100%;
+  height: 500px;
+}
+.banner_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+  padding: 20px;
+  border-radius: 10px;
+}
+.banner_text p {
+  font-size: 1.5em;
+}
+.banner_text .btn {
+  margin-top: 10px;
+  background-color: #d4af37;
+  color: white;
+}
+
+.gold-button {
+  background-color: #d4af37;
+  color: white;
+}
 .banner_page {
   position: relative;
+  text-align: center;
+  color: white;
 }
-  .banner_page img {
-    width: 100%; /* Étend l'image sur toute la largeur de son conteneur */
-    height: 500px;
-    display: block; /* Assurez-vous que l'image est affichée en tant que bloc pour gérer correctement les marges */
-    filter: blur(2px);
-    opacity: 0.9;
-  }
-  .title_banner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center; /* Centrer le texte */
-  }
-  
-  .title_page {
-    color: black; /* Couleur du texte */
-    text-decoration: none;
-    font-size: 80px;
-  }
-  .btn_page {
-    color: black; /* Couleur du texte */
-    text-decoration: none;
-    font-size: 50px;
-  }
+.banner_page img {
+  width: 100%;
+  height: 400px;
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+}
+.title_banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour une meilleure lisibilité */
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+}
+.title_banner .title_page {
+  font-size: 2.5em;
+  margin: 0;
+}
+.title_banner .btn_page {
+  color: white;
+  text-decoration: none;
+  margin: 10px 0;
+  font-size: 1.2em;
+}
+.title_banner .btn_page:hover {
+  text-decoration: underline;
+}
+
+.trophy {
+  background-color: beige;
+  width: auto;
+}
+
+.icon {
+  height: 80px;
+  width: 80px;
+}
