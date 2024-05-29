@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'cart/add_to_cart'
+  get 'wishlist', to: 'wishes#show'
+  post 'add_to_cart/:product_id', to: 'cart#add_to_cart', as: 'add_to_cart'
+
+
+
   get 'payments/new'
   get 'payments/create'
   root 'home#index'

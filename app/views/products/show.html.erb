@@ -50,10 +50,11 @@
         </select>
       </div>
       <!-- Bouton d'ajout au panier -->
-      <button type="button" class="btn btn-primary mt-3">Ajouter au panier</button>
-      <!-- Bouton d'ajout à la liste de souhaits -->
-      <button type="button" class="btn btn-outline-secondary mt-3">Ajouter à la liste de souhaits</button>
-    </div>
+      <!-- Bouton d'ajout au panier -->
+<%= form_tag add_to_cart_path(product_id: @item.id), method: :post do %>
+  <%= submit_tag "Ajouter au Panier", class: "btn btn-primary mt-3" %>
+<% end %>
+
   </div>
   
   <!-- Section de promotion -->
@@ -110,3 +111,4 @@
       <!-- Vous pouvez ajouter un formulaire pour soumettre un nouvel avis ici -->
     </div>
   </div>
+  
