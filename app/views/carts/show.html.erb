@@ -1,46 +1,44 @@
+<div class="container mt-5">
+  <!-- Liste des articles dans le panier -->
+  <% if @cart_items.any? %>
+    <% @cart_items.each do |cart_item| %>
+      <div class="row mb-3">
+        <div class="col-md-2">
+          <%= image_tag cart_item[:product].image_url, class: "img-fluid", alt: cart_item[:product].name %>
+        </div>
+        <div class="col-md-4">
+          <h5><%= cart_item[:product].name %></h5>
+          <p><strong>Prix unitaire:</strong> <%= number_to_currency(cart_item[:product].price) %></p>
+        </div>
+        <div class="col-md-2">
+          <p><strong>Quantité:</strong> <%= cart_item[:quantity] %></p>
+        </div>
+        <div class="col-md-2">
+          <p><strong>Total:</strong> <%= number_to_currency(cart_item[:total_price]) %></p>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <p>Votre panier est vide.</p>
+  <% end %>
 
-
-<div class="container mt-4">
-  <h1 class="mb-4">Mon Panier</h1>
+  <!-- Sous-total et total -->
   <div class="row">
-    <div class="col-md-8">
-      <div class="card mb-3">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="https://via.placeholder.com/150" class="img-fluid rounded-start product-img" alt="Placeholder">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Nom du Produit</h5>
-              <p class="card-text">Description du produit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <p class="card-text"><small class="text-muted">Quantité : 1</small></p>
-              <p class="card-text"><small class="text-muted">Prix unitaire : $10.00</small></p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="col-md-6">
+      <p><strong>Sous-total:</strong> <%= number_to_currency(@sub_total) %></p>
     </div>
-    <div class="col-md-4">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Résumé de la Commande</h5>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              Sous-total
-              <span class="badge bg-primary">$10.00</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              Frais de Livraison
-              <span class="badge bg-primary">$5.00</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              Total
-              <span class="badge bg-primary">$15.00</span>
-            </li>
-          </ul>
-          <a href="#" class="btn btn-primary mt-3">Passer la Commande</a>
-        </div>
-      </div>
+    <div class="col-md-6">
+      <p><strong>Total:</strong> <%= number_to_currency(@total) %></p>
+    </div>
+  </div>
+
+  <!-- Boutons pour ajouter ou retirer des articles -->
+  <div class="row mt-3">
+    <div class="col-md-6">
+      <%= link_to "Continuer vos achats", root_path, class: "btn btn-secondary" %>
+    </div>
+    <div class="col-md-6">
+      <%= link_to "Payer", payment_path, class: "btn btn-primary" %>
     </div>
   </div>
 </div>
