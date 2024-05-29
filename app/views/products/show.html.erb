@@ -1,15 +1,112 @@
-<!-- app/views/products/show.html.erb -->
 
-<div class="container">
+
+<div class="container mt-5">
+  <!-- Navigation -->
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <%= link_to "Accueil", root_path, class: "nav-link breadcrumb-item" %>
+      <li class="breadcrumb-item d-inline">
+        <%= link_to "Produits", products_path, class: "nav-link" %>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page"><%= @item.title %></li>
+    </ol>
+  </nav>
+
   <div class="row">
     <div class="col-md-6">
+      <!-- Image du produit -->
       <img src="<%= @item.image_url %>" class="img-fluid" alt="<%= @item.title %>">
+      
     </div>
     <div class="col-md-6">
+      <!-- Titre du produit -->
       <h1><%= @item.title %></h1>
+      <!-- Étoiles pour représenter la note -->
+      <div class="rating">
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+      </div>
+      <!-- Description du produit -->
       <p><%= @item.description %></p>
-      <p><strong>Price: $<%= @item.price %></strong></p>
-      <%= link_to 'Back to Products', products_path, class: 'btn btn-primary' %>
+      <!-- Prix du produit -->
+      <p><strong>Prix: $<%= @item.price %></strong></p>
+      <!-- Spécifications techniques -->
+      <h4>Spécifications Techniques</h4>
+      <ul>
+        <li>Matériau: Métal</li>
+        <li>Taille: 10cm x 15cm</li>
+        <li>Poids: 500g</li>
+      </ul>
+      <!-- Sélection de la taille du cadre -->
+      <div class="mt-4">
+        <label for="frame-size">Choisissez la taille du cadre:</label>
+        <select class="form-select" aria-label="Taille du cadre" id="frame-size">
+          <option value="small">Petit</option>
+          <option value="medium">Moyen</option>
+          <option value="large">Grand</option>
+        </select>
+      </div>
+      <!-- Bouton d'ajout au panier -->
+      <button type="button" class="btn btn-primary mt-3">Ajouter au panier</button>
+      <!-- Bouton d'ajout à la liste de souhaits -->
+      <button type="button" class="btn btn-outline-secondary mt-3">Ajouter à la liste de souhaits</button>
     </div>
   </div>
-</div>
+  
+  <!-- Section de promotion -->
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <div class="alert alert-info" role="alert">
+        Ne manquez pas notre promotion spéciale sur ce produit! Réduction de 20% pour les 100 premières commandes. <a href="#" class="alert-link">Achetez maintenant</a>.
+      </div>
+    </div>
+  </div>
+  
+<div class="mt-5">
+    <ul class="nav nav-tabs" id="productTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="additional-info-tab" data-toggle="tab" href="#additional-info" role="tab" aria-controls="additional-info" aria-selected="false">Informations Supplémentaires</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">Avis</a>
+      </li>
+    </ul>
+    
+    <div class="tab-content" id="productTabContent">
+    <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+      <p>La description de l'article est : Cet article est un produit de haute qualité conçu pour répondre à vos besoins quotidiens. Fabriqué à partir de matériaux durables, il offre une durabilité exceptionnelle. Sa conception ergonomique le rend confortable à utiliser pendant de longues périodes. Que vous soyez un professionnel ou un utilisateur occasionnel, cet article est sûr de vous satisfaire.</p>
+    </div>
+    <div class="tab-pane fade" id="additional-info" role="tabpanel" aria-labelledby="additional-info-tab">
+      <h4>Spécifications Techniques</h4>
+      <ul>
+        <li>Taille: Grand</li>
+        <li>Poids: 500g</li>
+        <li>Matériau: Alliage d'aluminium</li>
+        <li>Compatibilité: Universelle</li>
+        <li>Garantie: 2 ans</li>
+        <!-- Ajoutez d'autres spécifications techniques si nécessaire -->
+      </ul>
+      <p>Ces spécifications techniques fournissent des informations détaillées sur les caractéristiques de cet article.</p>
+      <!-- Vous pouvez également ajouter d'autres détails supplémentaires ici -->
+    </div>
+    <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+      <!-- Si vous avez des avis sur le produit, vous pouvez les afficher ici -->
+      <div class="review">
+        <h5>Excellent produit!</h5>
+        <p>Cet article a dépassé toutes mes attentes. Je le recommande vivement!</p>
+        <!-- Vous pouvez afficher d'autres détails de l'avis, tels que la note, l'auteur, etc. -->
+      </div>
+      <div class="review">
+        <h5>Un peu décevant</h5>
+        <p>Je m'attendais à mieux pour le prix. La qualité est moyenne.</p>
+        <!-- Vous pouvez afficher d'autres détails de l'avis, tels que la note, l'auteur, etc. -->
+      </div>
+      <!-- Vous pouvez ajouter un formulaire pour soumettre un nouvel avis ici -->
+    </div>
+  </div>
