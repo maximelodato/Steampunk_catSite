@@ -4,12 +4,16 @@ class CartsController < ApplicationController
 
   def show
     @cart_items = @cart.items.map do |product_id, quantity|
-      product = Product.find(product_id)
-      {
-        product: product,
-        quantity: quantity,
-        total_price: product.price * quantity
-      }
+      begin
+        product = Product.find(product_id)
+        {
+          product: product,
+          quantity: quantity,
+          total_price: product.price * quantity
+        }
+      rescue ActiveRecord::RecordNotFound
+        { product: nil, quantity: quantity, error: "Produit introuvable" }
+      end
     end
     @sub_total = @cart.total_price
     @total = @sub_total + 5.00 # Exemple de frais de livraison
@@ -22,9 +26,14 @@ class CartsController < ApplicationController
   end
 
   def remove_item
-    @cart.remove_product(params[:product_id])
-    flash[:success] = 'Produit retiré du panier avec succès.'
-    redirect_back(fallback_location: cart_path)
+    product_id = params[:product_id].to_s
+    if @cart.items[product_id]
+      @cart.remove_product(product_id)
+      flash[:success] = 'Produit supprimé du panier avec succès.'
+    else
+      flash[:error] = 'Produit introuvable dans le panier.'
+    end
+    redirect_to cart_path
   end
 
   private
