@@ -642,15 +642,19 @@
 
 .single-product .text-wrapper-7 {
   position: absolute;
-  top: 12px;
-  left: 5px;
-  font-family: "Poppins-Medium", Helvetica;
+  top: -15px;
+  left: -70px;
+  font-family: "Poppins-Medium", Helvetica, sans-serif;
   font-weight: 500;
-  color: var(--color-white);
-  font-size: 16px;
+  color: green;
+  font-size: 50px;
   letter-spacing: 0;
-  line-height: 24px;
+  line-height: 1.2;
   white-space: nowrap;
+  background-color: rgba(255, 255, 255, 0.7); /* Ajout d'un fond transparent pour une meilleure lisibilité */
+  padding: 10px; /* Ajout d'un padding pour un meilleur espacement */
+  border-radius: 5px; /* Coins arrondis pour un effet visuel agréable */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Ombre pour un effet de relief */
 }
 
 .single-product .description-2 {
