@@ -5,5 +5,3 @@ class Product < ApplicationRecord
       end
 end
 
-product = Product.first
-puts product.price

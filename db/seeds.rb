@@ -17,7 +17,7 @@ end
 
 # Create Items
 puts "Creating items..."
-20.times do
+10.times do
   Item.create!(
     title: Faker::Commerce.product_name,
     description: Faker::Lorem.paragraph,
@@ -80,7 +80,8 @@ puts "Creating products..."
   Product.create!(
     name: Faker::Commerce.product_name,
     price: Faker::Commerce.price(range: 10..100.0),
-    description: Faker::Lorem.paragraph
+    description: Faker::Lorem.paragraph,
+    image_url: Faker::LoremFlickr.image(size: "300x300", search_terms: ['product'])
   )
 end
 
