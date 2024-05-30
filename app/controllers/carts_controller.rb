@@ -16,7 +16,7 @@ class CartsController < ApplicationController
       end
     end
     @sub_total = @cart.total_price
-    @total = @sub_total + 5.00 # Exemple de frais de livraison
+    @total = @sub_total + 0.00 # Exemple de frais de livraison
   end
 
   def add_item

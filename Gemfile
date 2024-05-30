@@ -67,8 +67,10 @@ group :test do
 end
 
 gem 'devise'
+# Gemfile
+gem 'dotenv-rails', groups: [:development, :test]
 
-
+gem 'stripe'
 
 
 gem "faker", "~> 3.3"

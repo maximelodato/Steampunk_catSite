@@ -32,9 +32,6 @@
   <!-- Sous-total et total -->
   <div class="row">
     <div class="col-md-6">
-      <p><strong>Sous-total:</strong> <%= number_to_currency(@sub_total) %></p>
-    </div>
-    <div class="col-md-6">
       <p><strong>Total:</strong> <%= number_to_currency(@total) %></p>
     </div>
   </div>
@@ -45,7 +42,9 @@
       <%= link_to "Continuer vos achats", root_path, class: "btn btn-secondary" %>
     </div>
     <div class="col-md-6">
-      <%= link_to "Payer", payment_path, class: "btn btn-primary" %>
+
+      <%= button_to "Passer commande", checkout_create_path(total: @sub_total), class: "btn btn-primary", data: { turbo: false } %>
+
     </div>
   </div>
 </div>
