@@ -43,9 +43,9 @@ Pour lancer le site, il vous suffit d'ouvrir le fichier index.html dans votre na
 
 ## Auteurs
 
-* **Nom du premier auteur** _alias_ [@ValentinMich349](https://github.com/ValentinMich349)
-* **Nom du deuxième auteur** _alias_ [@maximelodato](https://github.com/maximelodato)
-* **Nom du troisième auteur** _alias_ [@Shunsunkey](https://github.com/Shunsunkey)
+* **Valentin MICHEL** _alias_ [@ValentinMich349](https://github.com/ValentinMich349)
+* **Maxime LOTADO** _alias_ [@maximelodato](https://github.com/maximelodato)
+* **Hortense PAILLER** _alias_ [@Shunsunkey](https://github.com/Shunsunkey)
 
 Lisez la liste des [contributeurs](https://github.com/your/project/contributors) pour voir qui à aidé au projet !
 
