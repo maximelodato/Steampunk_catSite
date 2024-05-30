@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+  <h1>Nouvelle commande passée</h1>
+  <p>Une nouvelle commande a été passée sur votre site.</p>
+  <!-- Vous pouvez inclure des données dynamiques ici, par exemple -->
+  <p>Client : <%= @message.name %></p>
+  <p>E-mail du client : <%= @message.email %></p>
+  <p>Produit commandé : <%= @message.subject %></p>
+  <p>Date de la commande : <%= @message.created_at.strftime("%d/%m/%Y") %></p>
+</body>
+</html>
