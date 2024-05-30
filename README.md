@@ -4,7 +4,7 @@
 
 Bienvenue dans notre e-boutique spécialisée dans la vente de photos de chats steampunk ! Que vous soyez un passionné de chats, de steampunk, ou les deux, vous trouverez ici une collection unique et captivante d'œuvres mettant en scène des félins dans un univers rétro-futuriste.
 
-##A propos
+## A propos
 
 Bien sûr, voici un exemple de README pour une e-boutique de photos de chats steampunk :
 E-Boutique de Photos de Chats Steampunk
