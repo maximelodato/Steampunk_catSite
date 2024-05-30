@@ -4,3 +4,6 @@ class Product < ApplicationRecord
         self[:image_url] || "https://via.placeholder.com/150"
       end
 end
+
+product = Product.first
+puts product.price
