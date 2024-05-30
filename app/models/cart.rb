@@ -1,5 +1,7 @@
 # app/models/cart.rb
-class Cart
+class Cart < ApplicationRecord
+  has_many :purchases
+  belongs_to :user
   attr_reader :items
 
   def initialize(session)
