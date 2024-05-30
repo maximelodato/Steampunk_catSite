@@ -1,8 +1,18 @@
 # README
 
-# Projet : boutique e-commerce de photo de chats
+# Projet : SteamPunk_Cat
 
-Une boutique en ligne qui vend des photos de chatons.
+Bienvenue dans notre e-boutique spécialisée dans la vente de photos de chats steampunk ! Que vous soyez un passionné de chats, de steampunk, ou les deux, vous trouverez ici une collection unique et captivante d'œuvres mettant en scène des félins dans un univers rétro-futuriste.
+
+##A propos
+
+Bien sûr, voici un exemple de README pour une e-boutique de photos de chats steampunk :
+E-Boutique de Photos de Chats Steampunk
+
+Bienvenue dans notre e-boutique spécialisée dans la vente de photos de chats steampunk ! Que vous soyez un passionné de chats, de steampunk, ou les deux, vous trouverez ici une collection unique et captivante d'œuvres mettant en scène des félins dans un univers rétro-futuriste.
+À Propos
+
+Notre e-boutique a été fondée par un groupe de passionnés d'art et de culture steampunk, ainsi que de félinophiles convaincus. Notre objectif est de vous offrir une expérience d'achat unique en vous proposant des photographies de chats alliant l'esthétique du steampunk à la grâce des félins.
 
 ## Pour commencer
 
