@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+  <h1>Confirmation de commande</h1>
+  <p>Merci pour votre commande! Nous avons bien reçu votre paiement.</p>
+  <!-- Vous pouvez inclure des données dynamiques ici, par exemple -->
+  <p>Date de la commande : <%= @message.created_at.strftime("%d/%m/%Y") %></p>
+</body>
+</html>

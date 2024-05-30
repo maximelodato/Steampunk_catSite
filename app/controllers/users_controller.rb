@@ -10,6 +10,9 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
+      # Envoie du message de mise à jour du profil à l'utilisateur
+      UserMailer.profile_updated_notification(@user).deliver_now
+      
       redirect_to user_path(@user), notice: 'Votre profil a été mis à jour avec succès.'
     else
       render :edit

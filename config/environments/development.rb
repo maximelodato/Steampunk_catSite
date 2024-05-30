@@ -36,6 +36,19 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
+  # Ionos configuration for mailer
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.ionos.com',
+    port:                 587, # Utilisez le port SMTP approprié (587 est courant pour le chiffrement TLS)
+    domain:               'steampunkcat.online'
+    user_name:            'contactus@steampunkcat.online', # Remplacez par votre adresse email IONOS
+    password:             'SteamPunk_Cat123', # Remplacez par votre mot de passe IONOS
+    authentication:       'login',
+    enable_starttls_auto: true
+  }
+  
+
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
