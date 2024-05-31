@@ -41,7 +41,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address:              'smtp.ionos.com',
     port:                 587, # Utilisez le port SMTP approprié (587 est courant pour le chiffrement TLS)
-    domain:               'steampunkcat.online'
+    domain:               'steampunkcat.online',
     user_name:            'contactus@steampunkcat.online', # Remplacez par votre adresse email IONOS
     password:             'SteamPunk_Cat123', # Remplacez par votre mot de passe IONOS
     authentication:       'login',
